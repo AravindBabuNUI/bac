@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'muted'
 
@@ -17,9 +17,9 @@ const variantClasses: Record<ButtonVariant, string> = {
   secondary: 'bg-secondary text-white hover:bg-secondary/90',
   danger: 'bg-error text-white hover:bg-error/90',
   muted: 'bg-muted text-white hover:bg-muted/90',
-}
+};
 
-const baseClasses = 'h-16 font-semibold text-base'
+const baseClasses = 'h-16 font-semibold text-base';
 
 export default function Button({
   children,
@@ -37,7 +37,7 @@ export default function Button({
     ${rounded ? 'rounded-[47px]' : 'rounded-[7px]'}
     ${variantClasses[variant]}
     ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
-    ${className}`
+    ${className}`;
 
   return (
     <button
@@ -50,5 +50,5 @@ export default function Button({
     >
       {children}
     </button>
-  )
+  );
 }

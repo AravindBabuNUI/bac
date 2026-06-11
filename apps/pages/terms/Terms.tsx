@@ -1,5 +1,5 @@
-export default function Terms() {
-  return (
-    <div>Terms</div>
-  )
-}
+import { Fallback } from "@/components";
+
+const Terms = () => <Fallback />;
+
+export default Terms;

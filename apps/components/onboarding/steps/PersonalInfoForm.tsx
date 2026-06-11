@@ -1,16 +1,18 @@
-import { DAY_OPTIONS, MONTH_OPTIONS, YEAR_OPTIONS } from "@/common/options/dateOptions";
-import { GENDER_OPTIONS } from "@/common/options/genderOptions";
+import { DAY_OPTIONS, MONTH_OPTIONS, YEAR_OPTIONS } from "@/constants/dateOptions";
+import { GENDER_OPTIONS } from "@/constants/genderOptions";
 import { Input, Select } from "@/ui/atoms";
 import StepLayout from "@/ui/molecules/wizard/StepLayout";
 import { useFormContext } from "react-hook-form";
 
 const PersonalInfoForm = () => {
-  const { control } = useFormContext();
-
+  const { control, formState: { errors } } = useFormContext();
+  const hasAnyError = ['firstName', 'lastName', 'dob.month', 'dob.day', 'dob.year', 'gender'].some(f => !!errors[f]);
+  
   return (
     <StepLayout
       title="Welcome!"
       subtitle="Now we just need the basics"
+      isDisabled={hasAnyError}
     >
       <Input
         name="firstName"
@@ -18,7 +20,7 @@ const PersonalInfoForm = () => {
         label="FIRST NAME"
         isRequired
       />
-      
+
       <Input
         name="lastName"
         control={control}
@@ -65,6 +67,6 @@ const PersonalInfoForm = () => {
       />
     </StepLayout>
   );
-}
+};
 
 export default PersonalInfoForm;

@@ -8,7 +8,7 @@ const NotificationBanner = ({ message }: NotificationBannerProps) => {
         <div className="bg-header p-2 text-xs text-white text-center uppercase" role="alert">
             {message}
         </div>
-    )
-}
+    );
+};
 
 export default NotificationBanner;

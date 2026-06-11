@@ -14,4 +14,4 @@ export const BANNER_CONTENT = [
   },
 ];
 
-export const AFFILIATION_MESSAGE = "This site is not affiliated with any government agency." 
+export const AFFILIATION_MESSAGE = "This site is not affiliated with any government agency."; 

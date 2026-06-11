@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
-import StepLayout from './StepLayout'
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import StepLayout from './StepLayout';
 
 function renderStepLayout(props: {
   title?: string
@@ -19,57 +19,57 @@ function renderStepLayout(props: {
         <div>Child content</div>
       </StepLayout>
     </form>
-  )
+  );
 }
 
 describe('StepLayout', () => {
   it('renders the title', () => {
-    renderStepLayout({ title: 'Welcome!' })
-    expect(screen.getByText('Welcome!')).toBeInTheDocument()
-  })
+    renderStepLayout({ title: 'Welcome!' });
+    expect(screen.getByText('Welcome!')).toBeInTheDocument();
+  });
 
   it('renders the subtitle', () => {
-    renderStepLayout({ subtitle: 'Now we need the basics' })
-    expect(screen.getByText('Now we need the basics')).toBeInTheDocument()
-  })
+    renderStepLayout({ subtitle: 'Now we need the basics' });
+    expect(screen.getByText('Now we need the basics')).toBeInTheDocument();
+  });
 
   it('renders children', () => {
-    renderStepLayout()
-    expect(screen.getByText('Child content')).toBeInTheDocument()
-  })
+    renderStepLayout();
+    expect(screen.getByText('Child content')).toBeInTheDocument();
+  });
 
   it('default button text is "CONTINUE"', () => {
-    renderStepLayout()
-    expect(screen.getByRole('button', { name: 'CONTINUE' })).toBeInTheDocument()
-  })
+    renderStepLayout();
+    expect(screen.getByRole('button', { name: 'CONTINUE' })).toBeInTheDocument();
+  });
 
   it('renders custom continueText', () => {
-    renderStepLayout({ continueText: 'SUBMIT' })
-    expect(screen.getByRole('button', { name: 'SUBMIT' })).toBeInTheDocument()
-  })
+    renderStepLayout({ continueText: 'SUBMIT' });
+    expect(screen.getByRole('button', { name: 'SUBMIT' })).toBeInTheDocument();
+  });
 
   it('default button has type="submit"', () => {
-    renderStepLayout()
-    expect(screen.getByRole('button')).toHaveAttribute('type', 'submit')
-  })
+    renderStepLayout();
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'submit');
+  });
 
   it('isSubmit=false: button has type="button"', () => {
-    renderStepLayout({ isSubmit: false })
-    expect(screen.getByRole('button')).toHaveAttribute('type', 'button')
-  })
+    renderStepLayout({ isSubmit: false });
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
+  });
 
   it('wrapper has role="group"', () => {
-    renderStepLayout()
-    expect(screen.getByRole('group')).toBeInTheDocument()
-  })
+    renderStepLayout();
+    expect(screen.getByRole('group')).toBeInTheDocument();
+  });
 
   it('wrapper has aria-labelledby="step-title"', () => {
-    renderStepLayout()
-    expect(screen.getByRole('group')).toHaveAttribute('aria-labelledby', 'step-title')
-  })
+    renderStepLayout();
+    expect(screen.getByRole('group')).toHaveAttribute('aria-labelledby', 'step-title');
+  });
 
   it('h2 has id="step-title"', () => {
-    renderStepLayout({ title: 'Welcome!' })
-    expect(screen.getByRole('heading', { level: 2 })).toHaveAttribute('id', 'step-title')
-  })
-})
+    renderStepLayout({ title: 'Welcome!' });
+    expect(screen.getByRole('heading', { level: 2 })).toHaveAttribute('id', 'step-title');
+  });
+});

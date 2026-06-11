@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import Button from './Button'
+import type { Meta, StoryObj } from '@storybook/react';
+import Button from './Button';
 
 const meta = {
   title: 'Atoms/Button',
@@ -17,9 +17,9 @@ const meta = {
       options: ['primary', 'secondary', 'danger', 'muted'],
     },
   },
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Button>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
@@ -28,7 +28,7 @@ export const Primary: Story = {
     variant: 'primary',
     className: 'w-[200px]',
   },
-}
+};
 
 export const Secondary: Story = {
   args: {
@@ -36,7 +36,7 @@ export const Secondary: Story = {
     variant: 'secondary',
     className: 'w-[200px]',
   },
-}
+};
 
 export const Danger: Story = {
   args: {
@@ -44,7 +44,7 @@ export const Danger: Story = {
     variant: 'danger',
     className: 'w-[200px]',
   },
-}
+};
 
 export const Muted: Story = {
   args: {
@@ -52,7 +52,7 @@ export const Muted: Story = {
     variant: 'muted',
     className: 'w-[200px]',
   },
-}
+};
 
 export const Rounded: Story = {
   args: {
@@ -61,7 +61,7 @@ export const Rounded: Story = {
     rounded: true,
     className: 'w-[200px]',
   },
-}
+};
 
 export const Disabled: Story = {
   args: {
@@ -70,4 +70,4 @@ export const Disabled: Story = {
     disabled: true,
     className: 'w-[200px]',
   },
-}
+};

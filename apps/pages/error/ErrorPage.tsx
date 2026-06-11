@@ -1,6 +1,6 @@
-import { isRouteErrorResponse, useNavigate, useRouteError } from 'react-router-dom'
-import { Button } from '@/ui/atoms'
-import BAG_LOGO from '@assets/bag_logo.svg'
+import { isRouteErrorResponse, useNavigate, useRouteError } from 'react-router-dom';
+import { Button } from '@/ui/atoms';
+import BAG_LOGO from '@assets/bag_logo.svg';
 
 const ErrorResponse = (is404: boolean) => ({
   statusCode: is404 ? '404' : '500',
@@ -8,14 +8,14 @@ const ErrorResponse = (is404: boolean) => ({
   message: is404
     ? "The page you're looking for doesn't exist or has been moved."
     : 'An unexpected error occurred. Please try again or go back home.',
-})
+});
 
 export default function ErrorPage() {
-  const error = useRouteError()
-  const navigate = useNavigate()
-  console.error('Route error:', error)
-  const is404 = isRouteErrorResponse(error) && error.status === 404
-  const { statusCode, title, message } = ErrorResponse(is404)
+  const error = useRouteError();
+  const navigate = useNavigate();
+  console.error('Route error:', error);
+  const is404 = isRouteErrorResponse(error) && error.status === 404;
+  const { statusCode, title, message } = ErrorResponse(is404);
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4">
@@ -44,5 +44,5 @@ export default function ErrorPage() {
         </Button>
       </div>
     </div>
-  )
+  );
 }

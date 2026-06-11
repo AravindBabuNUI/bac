@@ -1,8 +1,8 @@
-import { Controller, type Control, type FieldValues, type Path, type RegisterOptions } from 'react-hook-form'
-import type { ReactNode } from 'react'
-import Label from '../input/Label'
+import { Controller, type Control, type FieldValues, type Path, type RegisterOptions } from 'react-hook-form';
+import type { ReactNode } from 'react';
+import Label from '../input/Label';
 
-type SelectOption = {
+export type SelectOption = {
   label: string | ReactNode
   value: string | number
 }
@@ -36,8 +36,8 @@ const Select = <T extends FieldValues>({
       name={name}
       rules={rules}
       render={({ field, fieldState }) => {
-        const errorId = `${name}-error`
-        const hasError = !!fieldState.error
+        const errorId = `${name}-error`;
+        const hasError = !!fieldState.error;
         return (
           <div className={`flex flex-col gap-1 ${className ?? ''}`}>
             {label && (
@@ -53,7 +53,7 @@ const Select = <T extends FieldValues>({
               aria-required={isRequired}
               aria-invalid={hasError}
               aria-describedby={hasError ? errorId : undefined}
-              className={`w-full rounded-lg border px-4 py-2.5 text-sm text-input border-2 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 ${hasError
+              className={`w-full rounded-lg border px-4 py-2.5 text-sm text-muted border-2 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 ${hasError
                   ? 'border-error bg-red-50'
                   : 'border-input bg-white'
                 } ${className ?? ''}`}
@@ -73,10 +73,10 @@ const Select = <T extends FieldValues>({
               <p id={errorId} role="alert" className="ml-1 text-xs text-error">{fieldState.error?.message}</p>
             )}
           </div>
-        )
+        );
       }}
     />
-  )
-}
+  );
+};
 
-export default Select
+export default Select;

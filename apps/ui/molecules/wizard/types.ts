@@ -27,6 +27,7 @@ export interface StepLayoutProps {
   onContinue?: () => void;
   continueText?: string;
   isSubmit?: boolean;
+  isDisabled?: boolean;
 }
 
 

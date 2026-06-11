@@ -1,10 +1,10 @@
-import type { OnboardingFormData } from "@/types/OnboardingForm.type";
+import type { OnboardingFormData } from "@/components/onboarding/types/OnboardingForm.type";
 import { Wizard } from "@/ui/molecules/wizard";
 import { useForm, FormProvider } from "react-hook-form";
 import { OnboardingStepsEnum, STEPS, type OnboardingStepsEnumType } from "./steps/stepConfig";
 import { OnboardingFormSchema } from "@/schemas/OnboardingFormSchemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState, type SyntheticEvent } from "react";
+import { useMemo, useState, type SyntheticEvent } from "react";
 import SuccessPage from "./SuccessPage";
 import { ONBOARDING_DEFAULT_VALUES } from "@/constants/onboardingFormDefaults";
 
@@ -16,13 +16,12 @@ const OnboardingForm = () => {
         mode: "onChange",
         defaultValues: ONBOARDING_DEFAULT_VALUES,
         resolver: zodResolver(OnboardingFormSchema),
-    })
+    });
     const { trigger } = methods;
 
-    const currentStepIndex = STEPS.findIndex(step => step.step === currentStep);
+    const currentStepIndex = useMemo(() => STEPS.findIndex(step => step.step === currentStep), [currentStep]);
 
     const handleNext = async () => {
-        console.log('Current step index: ', currentStepIndex);
         const fieldsToValidate = STEPS[currentStepIndex].validations;
         const isStepValid = fieldsToValidate
             ? await trigger(fieldsToValidate as (keyof OnboardingFormData)[])
@@ -35,18 +34,14 @@ const OnboardingForm = () => {
     };
     
     const onHandleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
-        console.log("Submitting form...", currentStep, currentStepIndex, isSubmitted);
         event.preventDefault();
         if (currentStepIndex === STEPS.length - 1) {
             setIsSubmitted(true);
-            console.log("Final step reached, validating entire form...");
         }
         else {
-            handleNext()
-            console.log("Current form values: ", methods.getValues());
-            console.log('Form submitted successfully!');
+            handleNext();
         }
-    }
+    };
     return isSubmitted ? <SuccessPage /> :
         (<FormProvider {...methods}>
             <form onSubmit={onHandleSubmit}>
@@ -54,7 +49,7 @@ const OnboardingForm = () => {
             </form>
         </FormProvider>
 
-        )
-}
+        );
+};
 
 export default OnboardingForm;

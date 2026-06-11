@@ -4,12 +4,15 @@ import { useFormContext } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 const PhoneNumberForm = () => {
-  const { control, getValues } = useFormContext();
+  const { control, getValues, formState: {errors} } = useFormContext();
   const firstName = getValues("firstName") || "there";
+  const hasError = !!errors["phoneNumber"];
   return (
     <StepLayout
       title={`Last Step, ${firstName}!`}
       subtitle="Thanks! Please confirm your number"
+      continueText="Submit"
+      isDisabled={hasError}
     >
       <Input
         name="phoneNumber"
@@ -18,7 +21,7 @@ const PhoneNumberForm = () => {
         type="tel"
         isRequired
       />
-      <div className="mx-auto font-lato max-w-lg text-[13px] leading-[17px] text-disclaimer mt-2.5 text-justify">
+      <div className="mx-auto font-lato text-[13px] leading-[17px] text-disclaimer mt-2.5 text-justify">
         By selecting "Continue", I provide my ESIGN signature and express consent
         for GetnGoods, Unified Marketing Partners & its{" "}
         <a href="#" className="text-blue-500 underline" aria-label="Subsidiaries">
@@ -43,7 +46,7 @@ const PhoneNumberForm = () => {
         claim.
       </div>
     </StepLayout>
-  )
-}
+  );
+};
 
 export default PhoneNumberForm;

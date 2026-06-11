@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import footer_bag_logo from "@assets/bag_logo.svg";
-import { FOOTER_LINKS } from "@/constants/footerlinks";
+import { FOOTER_LINKS } from "@/constants/footerLinks";
 
 const Footer = () => {
   return (

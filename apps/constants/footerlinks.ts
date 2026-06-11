@@ -6,9 +6,9 @@ export const BENEFITS = [
 
 export const FOOTER_LINKS = [
   { label: "TERMS & CONDITIONS", href: "/terms" },
-  { label: "UNSUBSCRIBE", href: "#" },
-  { label: "PRIVACY POLICY", href: "#" },
-  { label: "PROGRAM REQUIREMENTS", href: "#" },
-  { label: "DO NOT SELL MY INFO", href: "#" },
-  { label: "CONTACT US", href: "#" },
+  { label: "UNSUBSCRIBE", href: "/unsubscribe" },
+  { label: "PRIVACY POLICY", href: "/privacy" },
+  { label: "PROGRAM REQUIREMENTS", href: "/program-requirements" },
+  { label: "DO NOT SELL MY INFO", href: "/do-not-sell-my-info" },
+  { label: "CONTACT US", href: "/contact" },
 ];

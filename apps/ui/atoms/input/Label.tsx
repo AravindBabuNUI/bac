@@ -7,5 +7,5 @@ export default function Label({ id, label, isRequired }: { id: string; label: st
             {isRequired && <span className="text-red-500">*</span>}
         </label>
 
-    )
+    );
 }

@@ -1,6 +1,6 @@
-import { Benefits, FeatureBanner, Footer, NotificationBanner } from '@/components'
-import { AFFILIATION_MESSAGE } from '@/constants/banner'
-import { Outlet } from 'react-router-dom'
+import { Benefits, FeatureBanner, Footer, NotificationBanner } from '@/components';
+import { AFFILIATION_MESSAGE } from '@/constants/banner';
+import { Outlet } from 'react-router-dom';
 
 export default function OnboardingLayout() {
     return (
@@ -20,10 +20,10 @@ export default function OnboardingLayout() {
                     <FeatureBanner />
                 </div>
             </div>
-            <div className="py-10">
+            <div className="py-8">
                 <Benefits />
                 <Footer />
             </div>
         </div>
-    )
+    );
 }

@@ -1,5 +1,5 @@
-import type { Decorator, Meta, StoryObj } from '@storybook/react'
-import StepLayout from './StepLayout'
+import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import StepLayout from './StepLayout';
 
 const meta = {
   title: 'Molecules/StepLayout',
@@ -13,9 +13,9 @@ const meta = {
       </div>
     )) as Decorator,
   ],
-} satisfies Meta<typeof StepLayout>
+} satisfies Meta<typeof StepLayout>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
@@ -29,7 +29,7 @@ export const Default: Story = {
     subtitle: 'Now we just need the basics',
     children: null,
   },
-}
+};
 
 export const WithCustomContinueText: Story = {
   render: (args) => (
@@ -43,7 +43,7 @@ export const WithCustomContinueText: Story = {
     continueText: 'SUBMIT',
     children: null,
   },
-}
+};
 
 export const AsButton: Story = {
   render: (args) => (
@@ -58,4 +58,4 @@ export const AsButton: Story = {
     continueText: 'NEXT',
     children: null,
   },
-}
+};

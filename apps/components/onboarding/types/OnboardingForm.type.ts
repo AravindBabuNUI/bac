@@ -1,11 +1,11 @@
-export const GenderEnum = {
+export const Genders = {
     Male: 'male',
     Female: 'female',
     NonBinary: 'non_binary',
     PreferNotToSay: 'prefer_not_to_say',
-} as const
+} as const;
 
-export type GenderEnum = typeof GenderEnum[keyof typeof GenderEnum]
+export type GenderEnum = typeof Genders[keyof typeof Genders]
 
 export interface OnboardingFormData {
     email: string;

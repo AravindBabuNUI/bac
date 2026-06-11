@@ -8,6 +8,7 @@ const StepLayout = ({
   onContinue,
   continueText = "CONTINUE",
   isSubmit = true,
+  isDisabled = false
 }: StepLayoutProps) => {
   return (
     <div
@@ -16,7 +17,7 @@ const StepLayout = ({
       className="flex flex-col animate-step-slide-in"
     >
       <div className="text-center font-bold mb-6">
-        <h2 id="step-title" className="font-fira text-2xl leading-10 text-primary mb-2">
+        <h2 id="step-title" className="font-fira text-2xl md:text-4xl leading-10 text-primary mb-2">
           {title}
         </h2>
         <p className="font-lato text-muted text-[19px] leading-6">{subtitle}</p>
@@ -30,6 +31,7 @@ const StepLayout = ({
         onClick={!isSubmit ? onContinue : undefined}
         variant="secondary"
         rounded
+        disabled={!!isDisabled}
       >
         {continueText}
       </Button>

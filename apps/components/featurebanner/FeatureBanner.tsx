@@ -9,7 +9,7 @@ const FeatureBanner = () => {
             <img
               src={icon}
               alt={label}
-              className="w-18 h-10 object-contain pointer-events-none"
+              className="w-18 object-contain pointer-events-none"
             />
             <span className="font-bold text-[16px] tracking-wide">
               {label}
@@ -18,7 +18,7 @@ const FeatureBanner = () => {
         );
       })}
     </div>
-  )
-}
+  );
+};
 
 export default FeatureBanner;

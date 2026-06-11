@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import WizardPage from './WizardPage'
-import type { WizardStep } from './types'
+import type { Meta, StoryObj } from '@storybook/react';
+import WizardPage from './WizardPage';
+import type { WizardStep } from './types';
 
 const STEPS: WizardStep[] = [
   {
@@ -21,7 +21,7 @@ const STEPS: WizardStep[] = [
     component: <div className="p-4 text-center text-sm text-muted">Address content</div>,
     validations: ['zipCode'],
   },
-]
+];
 
 const meta = {
   title: 'Molecules/WizardPage',
@@ -36,19 +36,19 @@ const meta = {
   argTypes: {
     currentStepIndex: { control: { type: 'range', min: 0, max: STEPS.length - 1 } },
   },
-} satisfies Meta<typeof WizardPage>
+} satisfies Meta<typeof WizardPage>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const FirstStep: Story = {
   args: { steps: STEPS, currentStepIndex: 0 },
-}
+};
 
 export const WithPageInfo: Story = {
   args: { steps: STEPS, currentStepIndex: 1 },
-}
+};
 
 export const WithAdditionalInfo: Story = {
   args: { steps: STEPS, currentStepIndex: 2 },
-}
+};

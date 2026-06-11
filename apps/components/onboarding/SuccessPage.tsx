@@ -2,8 +2,7 @@ import ProgressBar from "@/ui/molecules/wizard/ProgressBar";
 import { STEPS } from "./steps/stepConfig";
 import { Button } from "@/ui/atoms";
 
-const YES_NO_OPTIONS = ["Yes, I'm feeling lucky!", "No, maybe next time."];
-
+const YES_NO_OPTIONS = ["Yes", "No"];
 const SuccessPage = () => {
     return (
         <div className="w-full">
@@ -31,7 +30,7 @@ const SuccessPage = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default SuccessPage;

@@ -6,11 +6,11 @@ const ProgressBar = ({ currentStep, labels }: ProgressBarProps) => {
   return (
     <div className="w-full bg-white rounded-[11px] p-3 shadow-card">
       <div className="flex flex-col items-center">
-        <img src={BAG_LOGO} alt="Benefits Access Center Logo" className="h-6 mb-4" />
+        <img className="h-6 md:h-9 mb-4" src={BAG_LOGO} alt="Benefits Access Center Logo" />
         <img
           src={CASH}
           alt="Money pile"
-          className="h-24 object-contain mb-6 pointer-events-none"
+          className="h-14 object-contain mb-6 pointer-events-none"
         />
         <ol
           aria-label="Form progress"

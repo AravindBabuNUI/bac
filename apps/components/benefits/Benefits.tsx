@@ -1,9 +1,9 @@
-import { BENEFITS } from "@/constants/footerlinks";
+import { BENEFITS } from "@/constants/footerLinks";
 import tick from "@assets/tick.svg";
 
 const Benefits = () => {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12">
+    <div className="mx-auto max-w-3xl px-4">
       <ul className="space-y-2.5 m-auto px-6 list-none p-0" aria-label="Benefits">
         {BENEFITS.map((benefit, index) => (
           <li
@@ -16,7 +16,7 @@ const Benefits = () => {
             </div>
 
             <div className="flex-1 pr-2">
-              <p className="text-[15px] font-bold text-black leading-5">
+              <p className="text-[15px] font-bold text-muted leading-5">
                 {benefit}
               </p>
             </div>

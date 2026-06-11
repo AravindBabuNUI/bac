@@ -1,6 +1,6 @@
-import { defineConfig } from 'vitest/config'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
@@ -11,17 +11,17 @@ export default defineConfig({
     // Inline small non-font assets as base64 (fewer HTTP requests for small SVGs/images).
     // Fonts are explicitly excluded — they must stay as separate files for browser caching.
     assetsInlineLimit(filePath, content) {
-      if (/\.(woff2?|ttf|eot)(\?.*)?$/.test(filePath)) return false
-      return content.length < 8192
+      if (/\.(woff2?|ttf|eot)(\?.*)?$/.test(filePath)) return false;
+      return content.length < 8192;
     },
     rollupOptions: {
       output: {
         // Split stable vendor code into separate chunks so browsers can cache them
         // independently of app code changes
         manualChunks(id) {
-          if (id.includes('/react-dom/') || id.includes('/react/')) return 'vendor-react'
-          if (id.includes('/react-router')) return 'vendor-router'
-          if (id.includes('/react-hook-form/') || id.includes('/zod/')) return 'vendor-forms'
+          if (id.includes('/react-dom/') || id.includes('/react/')) return 'vendor-react';
+          if (id.includes('/react-router')) return 'vendor-router';
+          if (id.includes('/react-hook-form/') || id.includes('/zod/')) return 'vendor-forms';
         },
       },
     },
@@ -46,4 +46,4 @@ export default defineConfig({
       '@types': path.resolve(__dirname, './apps/types'),
     },
   },
-})
+});

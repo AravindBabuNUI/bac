@@ -1,7 +1,7 @@
-import type { Decorator, Meta, StoryObj } from '@storybook/react'
-import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import Input from './Input'
+import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import Input from './Input';
 
 type FormValues = { field: string }
 
@@ -16,13 +16,13 @@ type WrapperProps = {
 function InputWrapper({ label, placeholder, showError, withError, defaultValue }: WrapperProps) {
   const { control, setError } = useForm<FormValues>({
     defaultValues: { field: defaultValue ?? '' },
-  })
+  });
 
   useEffect(() => {
     if (withError) {
-      setError('field', { type: 'manual', message: 'This field is required' })
+      setError('field', { type: 'manual', message: 'This field is required' });
     }
-  }, [withError, setError])
+  }, [withError, setError]);
 
   return (
     <Input
@@ -32,7 +32,7 @@ function InputWrapper({ label, placeholder, showError, withError, defaultValue }
       placeholder={placeholder}
       showError={showError}
     />
-  )
+  );
 }
 
 const meta = {
@@ -45,23 +45,23 @@ const meta = {
       </div>
     )) as Decorator,
   ],
-} satisfies Meta<typeof InputWrapper>
+} satisfies Meta<typeof InputWrapper>;
 
-export default meta
+export default meta;
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
     placeholder: 'Enter text...',
   },
-}
+};
 
 export const WithLabel: Story = {
   args: {
     label: 'Full Name',
     placeholder: 'Enter your full name',
   },
-}
+};
 
 export const WithValue: Story = {
   args: {
@@ -69,7 +69,7 @@ export const WithValue: Story = {
     placeholder: 'Enter your email',
     defaultValue: 'user@example.com',
   },
-}
+};
 
 export const WithError: Story = {
   args: {
@@ -77,4 +77,4 @@ export const WithError: Story = {
     placeholder: 'Enter your email',
     withError: true,
   },
-}
+};
