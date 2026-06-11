@@ -6,7 +6,7 @@ import { OnboardingFormSchema } from "@/schemas/OnboardingFormSchemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMemo, useState, type SyntheticEvent } from "react";
 import SuccessPage from "./SuccessPage";
-import { ONBOARDING_DEFAULT_VALUES } from "@/constants/onboardingFormDefaults";
+import { ONBOARDING_DEFAULT_VALUES } from "@/components/onboarding/constants/onboardingFormDefaults";
 
 const OnboardingForm = () => {
     const [currentStep, setCurrentStep] = useState<OnboardingStepsEnumType>(OnboardingStepsEnum.Email);

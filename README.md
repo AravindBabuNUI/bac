@@ -91,7 +91,7 @@ pnpm test:e2e:ui
 
 E2E tests cover:
 - **`e2e/onboarding/button.spec.ts`** — Button rendering, styling, accessibility, and keyboard interaction
-- **`e2e/onboarding/onboarding-flow.spec.ts`** — Full onboarding flow across all 4 steps through to the success page
+- **`e2e/onboarding/onboardingFlow.spec.ts`** — Full onboarding flow across all 4 steps through to the success page
 
 > **Note:** Playwright browsers must be installed before the first run:
 > ```bash
@@ -119,8 +119,6 @@ apps/
 ├── index.css                 # Tailwind directives + CSS variables + Lato font
 │
 ├── assets/                   # SVG icons, images, and static files
-├── api/                      # API call functions (fetch wrappers)
-├── common/                   # Shared option lists (e.g. state dropdown options)
 ├── components/               # Feature-level components
 │   ├── benefits/             # Benefits list section
 │   ├── featurebanner/        # Feature highlights banner
@@ -152,7 +150,7 @@ e2e/
 │   └── storybook.ts          # Storybook iframe URL helper
 └── onboarding/
     ├── button.spec.ts        # Button component E2E tests
-    └── onboarding-flow.spec.ts # Full onboarding flow E2E tests
+    └── onboardingFlow.spec.ts # Full onboarding flow E2E tests
 ```
 
 ---

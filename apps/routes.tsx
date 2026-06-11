@@ -4,7 +4,7 @@ import OnboardingLayout from './pages/onboarding/OnboardingLayout';
 import { OnboardingPage, ErrorPage } from './pages';
 import UnsubscribePage from './pages/unsubscribe/UnsubscribePage';
 import PrivacyPage from './pages/privacy/PrivacyPage';
-import ProgramRequirementsPage from './pages/program-requirements/ProgramRequirementsPage';
+import ProgramRequirementsPage from './pages/programRequirements/ProgramRequirementsPage';
 import DoNotSellMyInfoPage from './pages/doNotSellMyInfo/DoNotSellMyInfoPage';
 import ContactPage from './pages/contact/ContactPage';
 import Terms from './pages/terms/Terms';
