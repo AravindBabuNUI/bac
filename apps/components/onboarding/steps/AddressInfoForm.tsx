@@ -27,6 +27,7 @@ const AddressInfoForm = () => {
           label="STATE"
           options={STATE_OPTIONS}
           className="flex-1"
+          placeholder="Select a state"
         />
       </div>
     </StepLayout>
