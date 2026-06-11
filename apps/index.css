@@ -1,0 +1,31 @@
+@import '@fontsource/lato/400.css';
+@import '@fontsource/lato/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background-container {
+  background-image: url("./assets/flag.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+:root {
+  --color-primary: #104E8B;
+  --color-primary-button: #2F69B3;
+  --color-secondary: #FF7F24;
+  --color-muted: #515151;
+  --color-input: #2C2C37;
+  --color-linen: #FAF0E6;
+  --color-progress-active: #639A67;
+  --color-progress-inactive: #D6C7B7;
+  --color-disclaimer: #666666;
+  --color-error: #ef4444;
+  --color-header: #1874CD;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+}
